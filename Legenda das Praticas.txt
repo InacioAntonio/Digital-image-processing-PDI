@@ -1,0 +1,14 @@
+
+Pratica 8 e interpoloção AUmenta e diminuir a imagem
+
+Pratica 10 filtagrem com kernel 3x3
+
+Pratica 7 contagem de regioes
+
+Pratica 9 Erosao e Dilatação
+
+Pratica 6 Distancia Euclidiana
+
+
+
+

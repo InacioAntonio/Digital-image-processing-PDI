@@ -130,6 +130,7 @@ qtd1=2;
 qtd2=4;
 qtd3=8;
 tic
+%{
 for i=1:size(aumento,1)
   for j=1:size(aumento,2)
     if aumento(i,j,:)==0
@@ -230,6 +231,21 @@ for i=1:size(aumento,1)
   endfor
 endfor
 toc;
+%}
+vizinhos =zeros(16,16,3);
+media=0;
+soma =0;
+validos=0
+for i=3:size(aumento,1)-3
+  for j=3:size(aumento,2)-3
+    if (bicubica(i,j,:)==0)
+      vizinhos = double(aumento(i-2:i+3,j-2:j+3,:));
+      #soma = sum(vizinhos!=0);
+      validos = sum(sum(vizinhos(:,:,:)!=0))
+      bicubica(i,j,:)=uint8(sum(sum(vizinhos))/validos(1));
+    endif
+  endfor
+ endfor
 bicubica=uint8(bicubica);
 figure(12),imshow(bicubica);
 
